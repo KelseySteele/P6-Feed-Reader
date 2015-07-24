@@ -80,6 +80,8 @@ function loadFeed(id, cb) {
     });
 }
 
+
+
 /* Google API: Loads the Feed Reader API and defines what function
  * to call when the Feed Reader API is done loading.
  */
@@ -129,3 +131,5 @@ $(function() {
         $('body').toggleClass('menu-hidden');
     });
 }());
+
+/*----Tests----*/
