@@ -56,7 +56,6 @@ $(function() {
 
     });
 
-
     /* TODO: Write a new test suite named "The menu" */
     describe('The Menu', function() {
 
@@ -96,7 +95,6 @@ $(function() {
     /* TODO: Write a new test suite named "Initial Entries" */
     
     describe('Initial Entries', function() {
-        
          /* TODO: Write a test that ensures when the loadFeed
          * function is called and completes its work, there is at least
          * a single .entry element within the .feed container.
@@ -122,8 +120,7 @@ $(function() {
     /* TODO: Write a new test suite named "New Feed Selection"*/
 
     describe('New Feed Selection', function() {
-        var feed0, //Udacity Blog feed
-        feed1; //CSS Tricks feed
+        var feed1;
 
         /* TODO: Write a test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
