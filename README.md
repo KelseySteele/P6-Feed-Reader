@@ -24,9 +24,15 @@ http://jasmine.github.io/2.1/introduction.html
 ### Test that each feed’s name and url is defined and present. 
 These tests were similar to the test for the “allFeeds” array. I tested that the name and url variables were defined. I also tested that they were defined by confirming that the value was not null. 
 
-The main difference from the “allFeeds” test, was that these tests where placed within a for-loop. The loop tested for a name and url for each of the feeds within the “allFeeds” array. 
+Originally, these tests were placed within a for-loop. The loop tested for a name and url for each of the feeds within the “allFeeds” array. However, a Udacity reviewer suggested that I use a forEach loop. 
+
+I found a really great post about the forEach loop at StackOverflow. Here is the link:
+http://stackoverflow.com/questions/9329446/for-each-over-an-array-in-javascript 
+
+The forEach loop is much simpler than my original for-loop and it’s nice that I don’t have to create an index variable. It’s also the most recent standard for loops in JavaScript, although it doesn’t work natively on older browsers.
 
 These tests and the test for the “allFeeds” array were organized within the same test suite named “RSS Feeds”. 
+
 
 ### Test that the menu is hidden on default.
 I created another test suite with the name “menu”. I wanted to test that the menu was hidden when the page initially loaded. In order to do this, I had to figure out how the application was hiding and showing the menu on the left hand side. 
@@ -69,11 +75,15 @@ entryElement= $(article.entry);
 
 expect(entryElement).toBeDefined; 
 
-This worked. I knew from this that this “entryElement” would only be defined if it were within the div.feed element. 
+I knew from this that this “entryElement” would only be defined if it were within the div.feed element. 
 
-After looking at these variables, I simplified it down into one variable. This is what it looks like now:
+After looking at these variables, I simplified it down into one variable. This is what it looked like originally:
 
 var feedContainer = $('div.feed.article.article.entry'); 
+
+After my code was reviewed, it was pointed out that the feed container always has an object defined, but it doesn’t necessarily mean that the object contains anything. 
+
+In order to fix this, I kept in mind that the “entry” element, within the feed class would only exist within the feed class. So, I ran a test that expected the element with the class name of “entry” to be defined. I also created a test that expected the length of the html content of the “entry” class to be greater than 0. I deleted the “feedContainer” variable and replaced it with a variable called “entry”, which is equal to “$('.entry')”.
 
 ### Test that the content changes with each new feed.
 The final test suite was called “New Feed Selection” and its purpose was to test that the feed did indeed load new content when another feed was clicked.
