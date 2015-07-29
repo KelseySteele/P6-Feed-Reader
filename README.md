@@ -22,7 +22,7 @@ I used the Jasmine Documentation for Jasmine 2.1 as a reference in writing these
 http://jasmine.github.io/2.1/introduction.html
 
 ### Test that each feed’s name and url is defined and present. 
-These tests were similar to the test for the “allFeeds” array. I tested that the name and url variables were defined. I also tested that they were defined by confirming that the value was not null. 
+These tests were similar to the test for the “allFeeds” array. I tested that the name and url variables were defined. I also tested that they were defined by confirming that the value was not null and that their length was greater than 1. 
 
 Originally, these tests were placed within a for-loop. The loop tested for a name and url for each of the feeds within the “allFeeds” array. However, a Udacity reviewer suggested that I use a forEach loop. 
 
@@ -60,7 +60,7 @@ The “loadFeed()” function uses Google’s Feed Reader API to append the four
 
 To test that this was being done asynchronously, I created a new test suite named “Initial Entries” and included a “beforeEach” and “done()” function that made sure the loadFeed function loaded before the expectation test. 
 
-### Test that at least one entry element is within the feed element.
+### Test that there are four entry elements within the feed element.
 I knew that I needed to have a test that showed that the “article.entry” element was within the “div.feed” element, so within the test suite, I created variables to hold them called entryElement and feedContainer. 
 
 I tried different matchers such as “has” and “hasClass” to see if I could simply use these two elements, but this kept resulting in failed tests. I then just ended up testing to see if these two elements existed by running “expect(entryElement).toBeDefined()” and “expect(feedContainer).toBeDefined()”. Both of these tests resulted in successful specs. 
@@ -84,6 +84,8 @@ var feedContainer = $('div.feed.article.article.entry');
 After my code was reviewed, it was pointed out that the feed container always has an object defined, but it doesn’t necessarily mean that the object contains anything. 
 
 In order to fix this, I kept in mind that the “entry” element, within the feed class would only exist within the feed class. So, I ran a test that expected the element with the class name of “entry” to be defined. I also created a test that expected the length of the html content of the “entry” class to be greater than 0. I deleted the “feedContainer” variable and replaced it with a variable called “entry”, which is equal to “$('.entry')”.
+
+After a second revision, I ended up replacing the "entry" variable with "entries", which is now equal to "$('.feed .entry')". I also added the expectation that these entries' length would be four, since there are four entries within the feed container. 
 
 ### Test that the content changes with each new feed.
 The final test suite was called “New Feed Selection” and its purpose was to test that the feed did indeed load new content when another feed was clicked.
