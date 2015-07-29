@@ -84,7 +84,7 @@ $(function() {
     describe('Initial Entries', function() {
         /* This test ensures that when the loadFeed
         * function is called and completes its work, there are four
-        *.entry element within the .feed container.
+        * entry elements within the .feed container.
         */
 
         //Make sure that the async project finishes before the test.
