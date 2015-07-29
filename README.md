@@ -97,10 +97,10 @@ https://discussions.udacity.com/t/new-feed-selection-question/16274/3
 
 ## Summary of Resources
 Here is a list of the resources that I used to complete this project. 
-•	Udacity’s forums and “JavaScript Testing” online class
-•	Jasmine 2.1’s documentation
-•	Web Platform
-•	JS Hint (for correcting syntax)
+* Udacity’s forums and “JavaScript Testing” online class
+*	Jasmine 2.1’s documentation
+*	Web Platform
+*	JS Hint (for correcting syntax)
 
 
 # Project Overview
