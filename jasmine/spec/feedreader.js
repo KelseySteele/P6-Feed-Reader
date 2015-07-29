@@ -14,10 +14,10 @@ $(function() {
     * feeds definitions, the allFeeds variable in our application.
     */
     describe('RSS Feeds', function() {
-         /* This tests to make sure that the
-         * allFeeds variable has been defined and that it is not
-         * empty.
-         */
+        /* This tests to make sure that the
+        * allFeeds variable has been defined and that it is not
+        * empty.
+        */
         var len = allFeeds.length;
 
         it('are defined', function() {
@@ -26,9 +26,9 @@ $(function() {
         });
 
         /* Using forEach, loop through each feed
-         * in the allFeeds object and ensure each URL is defined
-         * and not empty.
-         */
+        * in the allFeeds object and ensure each URL is defined
+        * and not empty.
+        */
         it ('url of allFeeds objects are defined and not empty', function(){
             allFeeds.forEach(function(entry){
                 expect(entry.url).toBeDefined();
@@ -38,9 +38,9 @@ $(function() {
         });
 
         /* Using forEach, loop through each feed
-         * in the allFeeds object and ensure each name is defined
-         * and not empty.
-         */
+        * in the allFeeds object and ensure each name is defined
+        * and not empty.
+        */
         it ('name of allFeeds objects are defined and not empty', function(){
             allFeeds.forEach(function(entry){
                 expect(entry.name).toBeDefined();
@@ -54,11 +54,11 @@ $(function() {
     /* Test the functionality of the the menu" */
     describe('The Menu', function() {
         /* The menu is hidden by a class called, "menu-hidden".
-         * When the menu-icon is clicked, the "menu-hidden" class is removed
-         * from the body element. When the icon is clicked again, the "menu-hidden"
-         * class is added back onto the body element. The following tests
-         * ensure that this feature works.
-         */
+        * When the menu-icon is clicked, the "menu-hidden" class is removed
+        * from the body element. When the icon is clicked again, the "menu-hidden"
+        * class is added back onto the body element. The following tests
+        * ensure that this feature works.
+        */
 
         var body = document.body,
         className = className;
@@ -82,10 +82,10 @@ $(function() {
     });
 
     describe('Initial Entries', function() {
-         /* This test ensures that when the loadFeed
-         * function is called and completes its work, there are four
-         *.entry element within the .feed container.
-         */
+        /* This test ensures that when the loadFeed
+        * function is called and completes its work, there are four
+        *.entry element within the .feed container.
+        */
 
         //Make sure that the async project finishes before the test.
         beforeEach(function(done){
@@ -104,8 +104,8 @@ $(function() {
     describe('New Feed Selection', function() {
         var feed1;
         /* This test insures that when a new feed is loaded
-         * by the loadFeed function that the content actually changes.
-         */
+        * by the loadFeed function that the content actually changes.
+        */
 
         //Make sure the async project finishes before the test.
         beforeEach(function(done){
@@ -123,7 +123,6 @@ $(function() {
                 done();
             });
         });
-
     });
 
 }());
