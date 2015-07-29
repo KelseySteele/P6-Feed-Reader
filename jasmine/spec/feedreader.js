@@ -14,15 +14,12 @@ $(function() {
     * feeds definitions, the allFeeds variable in our application.
     */
     describe('RSS Feeds', function() {
-
-        var len = allFeeds.length;
-        /* This is our first test - it tests to make sure that the
+         /* This tests to make sure that the
          * allFeeds variable has been defined and that it is not
-         * empty. Experiment with this before you get started on
-         * the rest of this project. What happens when you change
-         * allFeeds in app.js to be an empty array and refresh the
-         * page?
+         * empty.
          */
+        var len = allFeeds.length;
+
         it('are defined', function() {
             expect(allFeeds).toBeDefined();
             expect(len).not.toBe(0);
@@ -36,6 +33,7 @@ $(function() {
             allFeeds.forEach(function(entry){
                 expect(entry.url).toBeDefined();
                 expect(entry.url).not.toBeNull();
+                expect(entry.url.length).toBeGreaterThan(1);
             });
         });
 
@@ -47,6 +45,7 @@ $(function() {
             allFeeds.forEach(function(entry){
                 expect(entry.name).toBeDefined();
                 expect(entry.name).not.toBeNull();
+                expect(entry.name.length).toBeGreaterThan(1);
             });
         });
 
@@ -84,8 +83,8 @@ $(function() {
 
     describe('Initial Entries', function() {
          /* This test ensures that when the loadFeed
-         * function is called and completes its work, there is at least
-         * a single .entry element within the .feed container.
+         * function is called and completes its work, there are four
+         *.entry element within the .feed container.
          */
 
         //Make sure that the async project finishes before the test.
@@ -93,11 +92,11 @@ $(function() {
             loadFeed(0, done);
         });
 
-        //Test for at least one entry element.
-        it('feed contains at least one entry element', function(done){
-            var entry = $('.entry');
-            expect(entry).toBeDefined();
-            expect(entry.html().length).toBeGreaterThan(0);
+        //Test for four entry elements.
+        it('feed contains four entry elements', function(done){
+            var entries = $('.feed .entry');
+            expect(entries).toBeDefined();
+            expect(entries.length).toEqual(4);
             done();
         });
     });
@@ -112,7 +111,7 @@ $(function() {
         beforeEach(function(done){
             $('.feed').empty();
             loadFeed(1, function(){
-                feed1 = $('.feed').html();
+               feed1 = $('.feed').html();
                done();
             });
         });
