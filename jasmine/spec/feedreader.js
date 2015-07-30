@@ -69,7 +69,6 @@ $(function() {
         });
 
         it('menu changes visibly when the menu icon is clicked', function(){
-            //$('.icon-list').click();
             //On first click, menu appears and the "menu-hidden" class is removed from the body element.
             $('a.menu-icon-link').trigger('click');
             //expect(bodyClass).toBeNull();//code
